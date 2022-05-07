@@ -4,6 +4,7 @@
 #include <iostream>
 
 class Persegi_Panjang
+
 {
     private: 
 
