@@ -35,11 +35,11 @@ void Persegi_Panjang::printResult()
 /* Buatlah operator == yang berfungsi untuk menentukan apakah dua buah kelas persegi panjang saling beririsan atau tidak */
 bool Persegi_Panjang::operator==(const Persegi_Panjang& newdata) const
 {
-    if (this->x_min >= newdata.x_max|| newdata.x_min >= this->x_max)
-        return false;
-    if (this->y_min >= newdata.y_max|| newdata.y_min >= this->y_max)
-        return false;
+    if (this->x_max == newdata.x_min && this->x_min < newdata.x_max && this->y_max > newdata.y_min && this->y_min > newdata.y_max)
     return true;
+    
+    else
+    return false;
 }
 
 /* Buat operator + dengan menambah luasan dari persegi panjang dengan melakukan penggabungan terdapat kedua luasan dari persegi panjang tersebut.
@@ -55,8 +55,8 @@ Persegi_Panjang Persegi_Panjang::operator+(const Persegi_Panjang& newdata)
         result.y_min = std::min(this->y_min, newdata.y_min);
         result.y_max = std::max(this->y_max, newdata.y_max);
     }
-    else
-        std::cout << "The rectangle is not sliced";
+    else 
+        std::cout << "The rectangle for Operator + couldn't be sliced !";
     return result;
 }
 
@@ -73,7 +73,7 @@ Persegi_Panjang Persegi_Panjang::operator-(const Persegi_Panjang& newdata)
         result.y_max = std::min(this->y_max, newdata.y_max);
     }
     else
-        std::cout << "The rectangle is not sliced";
+        std::cout << "The rectangle for Operator - couldn't be sliced !";
     return result;
 }
 
@@ -87,11 +87,11 @@ void Persegi_Panjang::operator++()
     float midpoint_x = (this->x_max + this->x_min) / 2;
     float midpoint_y = (this->y_max + this->y_min) / 2;
 
-    this->x_max = midpoint_x + (width / 2);
-    this->x_min = midpoint_x - (width / 2);
+    this->x_max = midpoint_x + (length / 2);
+    this->x_min = midpoint_x - (length / 2);
 
-    this->y_max = midpoint_y + (length / 2);
-    this->y_min = midpoint_y - (length / 2);
+    this->y_max = midpoint_y + (width / 2);
+    this->y_min = midpoint_y - (width / 2);
 
 }
 
@@ -102,9 +102,9 @@ void Persegi_Panjang::operator--()
     float midpoint_x = (this->x_max + this->x_min) / 2;
     float midpoint_y = (this->y_max + this->y_min) / 2;
 
-    this->x_max = midpoint_x + (width / 2);
-    this->x_min = midpoint_x - (width / 2);
+    this->x_max = midpoint_x + (length / 2);
+    this->x_min = midpoint_x - (length / 2);
 
-    this->y_max = midpoint_y + (length / 2);
-    this->y_min = midpoint_y - (length / 2);
+    this->y_max = midpoint_y + (width / 2);
+    this->y_min = midpoint_y - (width / 2);
 }
