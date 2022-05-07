@@ -32,8 +32,7 @@ int main()
 
     Persegi_Panjang P1(length, width, midpoint_x, midpoint_y);
 
-    cout << endl
-         << endl;
+    cout << endl ;
 
     cout << "Enter the Number of the Second Rectangle : " << endl;
     cout << "Length : ";        cin >> length;
@@ -57,12 +56,18 @@ int main()
 
     Persegi_Panjang P3 = P1 + P2;
 
-    cout << "The Addition of two Rectangles : " << endl;
+    cout << endl;
+    
+    cout << "The Final Result after Operator + of two Rectangles : " << endl;
     P3.printResult();
 
-    Persegi_Panjang P4 = P1 - P2;
+    cout << endl;
 
-    cout << "The Substraction of two Rectangles : " << endl;
+    Persegi_Panjang P4 = P1 - P2;
+    
+    cout << endl;
+
+    cout << "The Final Result after Operator - of two Rectangles : " << endl;
     P4.printResult();
 
     cout << endl
@@ -122,7 +127,7 @@ int main()
     cout << endl
          << endl;
 
-    cout << "The program is done, thank you for start! " << endl;
+    cout << "The program is done, thank you for start! " << endl << endl;
 
     return 0;
 }
